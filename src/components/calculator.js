@@ -1,16 +1,9 @@
-import { useState } from "react"
+import '../stylesheets/calculator.scss'
 
 const Calculator =({children})=>{
-
-    const [result,  setResult] = useState('');
-    return(
-        <div className="calculator">
-            <form>
-                <input type='text' id='output' value={result}/>
-            </form>
-            <div className="calculator-grid">{children}</div>
-        </div>
+    return (
+        <div className="calculator">{children}</div>
     )
 }
 
-export default Calculator;
+export default Calculator
