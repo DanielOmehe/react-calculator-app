@@ -1,6 +1,6 @@
 import '../stylesheets/button.scss';
-const Button =({children, id, value, dispatch, type})=>{
-    return <button id={id} onClick={dispatch} >{children}</button>
+const Button =({children, value, dispatch, type})=>{
+    return <button onClick={()=> dispatch({type: type, payload: {value: value ? value : null}})}>{children}</button>
 }
 
 export default Button

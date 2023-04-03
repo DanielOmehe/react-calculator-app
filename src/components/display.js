@@ -1,6 +1,6 @@
-const Display =()=>{
+const Display =({children})=>{
     return(
-        <div className="display"></div>
+        <div className="display">{children}</div>
     )
 }
 

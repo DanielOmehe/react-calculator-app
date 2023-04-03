@@ -22,6 +22,30 @@
         ;
         margin-bottom: 10px;
         color: #fff;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+        .input-screen{
+            grid-column: 1 / 2;
+            grid-row: 1 / span 1;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 10px;
+            font-weight: 700;
+        }
+        .output-screen{
+            grid-column: 1;
+            grid-row: 2 / span 1;
+            font-size: 20px;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 10px;
+        }
     }
 
     .keypad{
