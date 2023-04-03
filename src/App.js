@@ -27,7 +27,7 @@ function reducer(state, { type, payload }) {
         input: `${state.input}${payload.value}`,
       };
     case ACTIONS.CLEAR_OPERATION:
-      return { input: '', result: '' };
+      return { input: null, result: null };
     case ACTIONS.DELETE_OPERATION:
       return{
         ...state,
@@ -36,7 +36,7 @@ function reducer(state, { type, payload }) {
     case ACTIONS.EVALUATE_OPERATION:
       return{
         ...state,
-        input: '',
+        input: null,
         result: evaluate(state.input)
       }
     default:
