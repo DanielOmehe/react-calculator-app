@@ -1,0 +1,72 @@
+$display: grid;
+$bg-color: #101516;
+$primary-color: #565b5c;
+$secondary-color: #299aa9;
+$six-column-template: repeat(6, 1fr);
+$five-column-template: repeat(5, 1fr);
+$four-column-template: repeat(4, 1fr);
+$three-column-template: repeat(3, 1fr);
+$two-column-template: repeat(2, 1fr);
+$six-row-template: repeat(6, 60px);
+$five-row-template: repeat(5, 60px);
+$six-row-template: repeat(6, 60px);
+$four-row-template: repeat(4, 60px);
+$three-row-template: repeat(3, 60px);
+$two-row-template: repeat(2, 60px);
+$border-bottom-radius: 10px;
+$border-radius: 5px;
+
+$parent-four-row-template: repeat(4, 1fr);
+$parent-six-row-template: repeat(6, 1fr);
+
+// start from first column and span multiple columns
+$column-one-span-two-column: 1 / span 2;
+$column-one-span-three-column: 1 / span 3;
+$column-one-span-four-column: 1 / span 4;
+$column-one-span-five-column: 1 / span 5;
+
+// start second first column and span multiple columns
+$column-two-span-two-column: 2 / span 2;
+$column-two-span-three-column: 2 / span 3;
+$column-two-span-four-column: 2 / span 4;
+$column-two-span-five-column: 2 / span 5;
+
+// start from third column and span multiple columns
+$column-three-span-two-column: 1 / span 2;
+$column-three-span-three-column: 1 / span 3;
+$column-three-span-four-column: 1 / span 4;
+$column-three-span-five-column: 1 / span 5;
+
+// start from third column and span multiple columns
+$column-four-span-two-column: 4 / span 2;
+$column-four-span-three-column: 4 / span 3;
+$column-four-span-four-column: 4 / span 4;
+$column-four-span-five-column: 4 / span 5;
+
+// start from first row and span multiple rows
+$row-one-span-one-row: 1 / 2;
+$row-one-span-two-row: 1 / span 2;
+$row-one-span-three-row: 1 / 4;
+$row-one-span-four-row: 1 / span 4;
+$row-one-span-five-row: 1 / span 5;
+
+// start from second row and span multiple rows
+$row-two-span-one-row: 2 / span 2;
+$row-two-span-two-row: 2 / span 3;
+$row-two-span-three-row: 2 / span 3;
+$row-two-span-four-row: 2 / span 3;
+$row-two-span-five-row: 2 / span 3;
+
+// start from third row and span multiple rows
+$row-three-span-one-row: 3 / span 2;
+$row-three-span-two-row: 3 / span 3;
+$row-three-span-three-row: 3 / span 3;
+$row-three-span-four-row: 3 / span 3;
+$row-three-span-five-row: 3 / span 3;
+
+// start from fourth row and span multiple rows
+// $row-four-span-one-row: 4 / span 2;
+$row-four-span-two-row: 4 / 6;
+$row-four-span-three-row: 4 / 7;
+$row-four-span-four-row: 4 / 8;
+$row-four-span-five-row: 4 / 9;

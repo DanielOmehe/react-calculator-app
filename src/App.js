@@ -11,12 +11,12 @@ import {
 } from "./components";
 
 function App() {
-  const [{ input, output }, setstate] = useState({});
+  
   return (
     <Calculator>
       <Display>
-        <div className="input-screen">{input}</div>
-        <div className="output-screen">{output}</div>
+        <div className="input-screen"></div>
+        <div className="output-screen"></div>
       </Display>
       <KeyPad>
         <TrigFunctions>
