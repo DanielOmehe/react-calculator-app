@@ -1,7 +1,7 @@
-const Display =({children})=>{
+const Screen =({children})=>{
     return(
         <div className="display">{children}</div>
     )
 }
 
-export default Display
+export default Screen
