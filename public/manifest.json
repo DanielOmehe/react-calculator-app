@@ -3,7 +3,7 @@
   "name": "Calculator",
   "icons": [
     {
-      "src": "./images/calculaotr.",
+      "src": "./images/calculator.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/svg"
     },
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff"
