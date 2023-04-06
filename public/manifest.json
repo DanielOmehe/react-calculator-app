@@ -1,6 +1,7 @@
 {
   "short_name": "Calculator App",
   "name": "Calculator",
+  "description": "Scientifc calculatorbuild with the useRducer hook",
   "icons": [
     {
       "src": "./images/calculator-64.png",
@@ -8,9 +9,9 @@
       "type": "image/png"
     },
     {
-      "src": " ./images/calculator-32.png",
+      "src": " ./images/calculator-32.svg",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/svg"
     },
     {
       "src": "./images/calculator-24.png",
@@ -34,7 +35,9 @@
     }
   ],
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "orientation": "portrait"
 }

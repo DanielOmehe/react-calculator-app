@@ -19,6 +19,8 @@ $border-radius: 5px;
 $parent-four-row-template: repeat(4, 1fr);
 $parent-six-row-template: repeat(6, 1fr);
 
+$parent-four-row: repeat(4, 40px);
+
 // start from first column and span multiple columns
 $column-one-span-two-column: 1 / span 2;
 $column-one-span-three-column: 1 / span 3;

@@ -28,51 +28,53 @@ function App() {
         <TrigFunctions>
           <Button dispatch={dispatch} type={ACTIONS.INVERSE}>Inv</Button>
           <Button
-            value="sin("
-            type={ACTIONS.INVERSE_FUNCTIONS}
+            type={ACTIONS.RADIAN}
             dispatch={dispatch}
           >
-            sin
+            RAD
           </Button>
           <Button
-            value="cos("
+            value="cos"
             type={ACTIONS.INVERSE_FUNCTIONS}
             dispatch={dispatch}
           >
             cos
           </Button>
           <Button
-            value="tan("
+            value="tan"
             type={ACTIONS.INVERSE_FUNCTIONS}
             dispatch={dispatch}
           >
             tan
           </Button>
           <Button
-            value="log("
+            value="sin"
             type={ACTIONS.INVERSE_FUNCTIONS}
             dispatch={dispatch}
           >
-            log
+            sin
           </Button>
           <Button
-            value={Math.E}
-            type={ACTIONS.INPUT_CONSTANT}
+            value='e'
+            type={ACTIONS.INPUT_OPERAND}
             dispatch={dispatch}
           >
             e
           </Button>
+          <Button operator='^2' type={ACTIONS.INVERSE_FUNCTIONS} dispatch={dispatch}>
+            X<sup>2</sup>
+          </Button>
+          <Button value="" type={ACTIONS.INVERSE_FUNCTIONS} dispatch={dispatch}>
+            X<sup>3</sup>
+          </Button>
           <Button value="^" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
-            ^
+            X<sup>y</sup>
           </Button>
-          <Button value="(" type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
-            (
+          <Button value="3√" type={ACTIONS.INVERSE_FUNCTIONS} dispatch={dispatch}>
+            <sup>3</sup>&radic;
           </Button>
-          <Button value=")" type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
-            )
-          </Button>
-          <Button value="√" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
-            √
+          <Button value="√" type={ACTIONS.INVERSE_FUNCTIONS} dispatch={dispatch}>
+          &radic;
           </Button>
           <Button
             value="sinh"
@@ -87,6 +89,82 @@ function App() {
             dispatch={dispatch}
           >
             cosh
+          </Button>
+          <Button
+            value="tanh"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            tanh
+          </Button>
+          <Button
+            value="acos"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            acos
+          </Button>
+          <Button
+            value="asin"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            asin
+          </Button>
+          <Button
+            value="atan"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            atan
+          </Button>
+          <Button
+            value="log"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            log
+          </Button>
+          <Button
+            value="cosh"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            cosh
+          </Button>
+          <Button
+            value="cosh"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            cosh
+          </Button>
+          <Button
+            value="cosh"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            (
+          </Button>
+          <Button
+            value=")"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >)
+          </Button>
+          <Button
+            value="sec"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            sec
+          </Button>
+          <Button
+            value="cosh"
+            type={ACTIONS.INVERSE_FUNCTIONS}
+            dispatch={dispatch}
+          >
+            cot
           </Button>
         </TrigFunctions>
         <Integers>
@@ -123,7 +201,7 @@ function App() {
           <Button value="." type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
             .
           </Button>
-          <Button value={Math.PI} type={ACTIONS.INPUT_CONSTANT} dispatch={dispatch}>
+          <Button value='π' type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
             π
           </Button>
         </Integers>
@@ -134,19 +212,19 @@ function App() {
           <Button type={ACTIONS.DELETE_OPERATION} dispatch={dispatch}>
             DEL
           </Button>
-          <Button value="+" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
+          <Button operator="+" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
             +
           </Button>
-          <Button value="-" type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
+          <Button operator="-" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
             -
           </Button>
-          <Button value="/" type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
+          <Button operator="/" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
             /
           </Button>
-          <Button value="*" type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
+          <Button operator="*" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
             *
           </Button>
-          <Button value="%" type={ACTIONS.INPUT_OPERAND} dispatch={dispatch}>
+          <Button operator="%" type={ACTIONS.INPUT_OPERATOR} dispatch={dispatch}>
             %
           </Button>
           <Button type={ACTIONS.EVALUATE_OPERATION} dispatch={dispatch}>
