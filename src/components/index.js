@@ -5,3 +5,5 @@ export { default as Calculator } from './calculator';
 export { default as Screen } from './screen';
 export { default as KeyPad } from './keypad';
 export { default as Button } from './button';
+export { default as InputScreen } from './inputScreen';
+export { default as OutputScreen } from './outputScreen';

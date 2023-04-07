@@ -6,17 +6,7 @@ const Button = ({
     type,
     operator
 }) => {
-    return <button onClick = {
-            () => dispatch({
-                type: type,
-                payload: {
-                    value: value,
-                    operator: operator
-                }
-            })
-        } > {
-            children
-        } </button>
+    return <button onClick = {() => dispatch({type: type, payload: { value, operator }})} > {children} </button>
 }
 
 export default Button

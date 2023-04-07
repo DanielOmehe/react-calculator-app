@@ -16,10 +16,19 @@ export default function reducer( state, { type, payload } ){
     try {
         switch(type){
             case ACTIONS.INVERSE_FUNCTIONS:
+                if(payload.value === '√' && state.firstOperand.includes('√')) return state;
+                if(payload.value === '3√' && state.firstOperand.includes('3√')) return state;
+                if(payload.value === '^2' && state.firstOperand.includes('^2')) return state;
+                if(payload.value === '^3' && state.firstOperand.includes('^3')) return state;
+                if(state.firstOperand !== '' && state.operator !== ''){
+                    return {
+                        ...state,
+                        secondOperand: `${state.secondOperand ? state.secondOperand : ''}${payload.value}`
+                    }
+                }
                 return{
                     ...state,
-                    firstOperand: `${state.firstOperand}${payload.value}`,
-                    result: evaluate(state)
+                    firstOperand: `${state.firstOperand ? state.firstOperand : ''}${payload.value}`
                 }
             case ACTIONS.INVERSE:
                 return {
@@ -27,9 +36,81 @@ export default function reducer( state, { type, payload } ){
                     inverse: !state.inverse
                 }
             case ACTIONS.EVALUATE_OPERATION:
+                if(state.firstOperand === '' && state.operator === '' && state.secondOperand === '' ){
+                    return{
+                        ...state,
+                        result: null
+                    }
+                }
+                if(state.firstOperand !== "" && state.operator === '' && state.secondOperand === ''){
+                    if(state.firstOperand.includes('^2')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('!')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('√')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('3√')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('^3')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('sin')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('tan')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('cos')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    else if(state.firstOperand.includes('log')){
+                        return {
+                            ...state,
+                            result: evaluate(state).toString()
+                        }
+                    }
+                    return{
+                        ...state,
+                        result: null
+                    }
+                }
+                if(state.firstOperand !== "" && state.operator !== '' && state.secondOperand === ''){
+                    return{
+                        ...state,
+                        result: null
+                    }
+                }
                 return {
                     ...state,
-                    result: evaluate(state),
+                    result: evaluate(state).toString(),
                     firstOperand: '',
                     operator: '',
                     secondOperand: ''
@@ -40,34 +121,40 @@ export default function reducer( state, { type, payload } ){
                 }
                 if(payload.value === '0' && state.firstOperand !== '' && state.operator !== '' && state.secondOperand === '0') return state
                 if(payload.value === '.' && state.firstOperand.includes('.')) return state
+                if(payload.value === '.' && state.secondOperand.includes('.')) return state
                 if(state.firstOperand !== '' && state.operator !== ''){
                     return {
                         ...state,
-                        secondOperand: `${state.secondOperand}${payload.value}`
+                        secondOperand: `${state.secondOperand ? state.secondOperand : ''}${payload.value}`
                     }
                 }
-                if(payload.value === 'π' && state.firstOperand  === '') {
-                    return {
-                        ...state,
-                        firstOperand: `${Math.PI}`
+                if(payload.value === 'π' ) {
+                    if(state.firstOperand  === ''){
+                        return {
+                            ...state,
+                            firstOperand: `${Math.PI}`
+                        }
+                    }
+                    else if(state.firstOperand !== ''){
+                        return {
+                            ...state,
+                            firstOperand: `${state.firstOperand ? state.firstOperand : ''}${payload.value}`,
+                            result: `${state.firstOperand * Math.PI}`
+                        }
                     }
                 }
-                if(payload.value === 'π' && state.firstOperand !== ''){
-                    return {
-                        ...state,
-                        firstOperand: `${state.firstOperand * Math.PI}`
+                if(payload.value === 'e') {
+                    if(state.firstOperand !== ''){
+                        return {
+                            ...state,
+                            firstOperand: `${state.firstOperand * Math.E}`
+                        }
                     }
-                }
-                if(payload.value === 'e' && state.firstOperand  === '') {
-                    return {
-                        ...state,
-                        firstOperand: `${Math.E}`
-                    }
-                }
-                if(payload.value === 'e' && state.firstOperand !== ''){
-                    return {
-                        ...state,
-                        firstOperand: `${state.firstOperand * Math.E}`
+                    else if(state.firstOperand  === ''){
+                        return {
+                            ...state,
+                            firstOperand: `${Math.E}`
+                        }
                     }
                 }
                 return{
@@ -88,10 +175,10 @@ export default function reducer( state, { type, payload } ){
                         operator: `${payload.operator}`
                     }
                 }
-                if(state.firstOperand !== '' && state.operator !== '' && state.secondOperand !== ''){
+                if(payload.operator !== '' && state.firstOperand !== '' && state.operator !== '' && state.secondOperand !== ''){
                     return {
                         ...state,
-                        firstOperand: `${evaluate(state)}`,
+                        firstOperand: `${state.firstOperand}${state.operator}${state.secondOperand}`,
                         secondOperand: ''
                     }
                 }
